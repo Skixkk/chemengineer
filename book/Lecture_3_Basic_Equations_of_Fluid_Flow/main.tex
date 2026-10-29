@@ -1,0 +1,168 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+
+流体流动基本方程知识点
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c} 
+\toprule
+知识点 & point\\ [0.5ex] 
+\midrule
+ 1 & 连续性方程 \\
+ 2 & 伯努利方程 \\
+\bottomrule
+\end{tabular}
+\caption{Knowledge Points Table of Basic Equations of Fluid Flow.}
+\label{table:data}
+\end{table}
+
+\chapter{连续性方程}
+
+稳态流动，管路无分支和汇合，质量守恒
+
+\begin{equation}
+q_\text{m1} = q_\text{m2}
+\end{equation}
+
+\begin{equation}
+\rho_1 q_\text{v1} = \rho_2 q_\text{v2}
+\end{equation}
+
+不可压缩流体：
+
+\begin{equation}
+\rho_1 = \rho_2 = \rho
+\end{equation}
+
+\begin{equation}
+q_\text{v1} = q_\text{v2}
+\end{equation}
+
+不可压缩流体在\bluebold{圆形管路}中流动
+
+\begin{equation}
+\begin{rcases}
+\displaystyle A = \frac{\pi}{4} d^2 \\[4pt]
+\displaystyle q_\text{v} = uA \\[4pt]
+\displaystyle q_\text{v1} = q_\text{v2}
+\end{rcases}
+\quad
+\Rightarrow
+\quad
+\displaystyle u_1 d_1^2 = u_2 d_2^2
+\quad \Rightarrow \quad
+\frac{u_1}{u_2} = \left(\frac{d_2}{d_1}\right)^2
+\label{eq:continuity-set}
+\end{equation}
+
+稳态流动系统，流量一定，圆形管道中各截面流速仅与直径有关
+
+\section*{tips}
+
+\bluebold{计算相关会与机械能衡算式、流动阻力计算等融合在一起作为一道大题考}
+
+\chapter{伯努利方程}
+
+\section{伯努利方程}
+
+衡算范围：管内壁面、1-1'与 2-2' 间截面
+
+衡算基准：1kg 流体主流区
+
+基准水平面：0-0' 平面
+
+对于做稳态流动的不可压缩流体，机械能衡算
+
+\begin{equation}
+gz_1 + \frac{u_1^2}{2} + \frac{p_1}{\rho} + W_\mathrm{e} = gz_2 + \frac{u_2^2}{2} + \frac{p_2}{\rho} + h_\mathrm{f}
+\qquad \mathrm{J/kg}
+\label{eq:bernoulli}
+\end{equation}
+
+符号说明（单位质量，J/kg）
+
+\vspace{6pt}
+$gz_1$、$gz_2$：位能，相对值，基于同一基准水平面
+
+\vspace{6pt}
+\(\dfrac{p_1}{\rho}\)、\(\dfrac{p_2}{\rho}\)：静压能，基于同一压强基准，绝对压强或表压
+
+\vspace{6pt}
+\(\dfrac{u_1^2}{2}\)、\(\dfrac{u_2^2}{2}\)：动能，和速度有关
+
+\vspace{6pt}
+$h_\mathrm{f}$：阻力损失，流体具有黏性导致的
+
+\vspace{6pt}
+有效功 $W_\mathrm{e}$：输送设备对 1kg 流体做的有效功
+
+\vspace{6pt}
+有效功率 $N_\mathrm{e}$：单位时间输送设备做的有效功率，J/s 或 W
+
+\begin{equation}
+N_\mathrm{e} = q_\text{m} W_\mathrm{e} = \rho q_\text{v} W_\mathrm{e}
+\qquad \mathrm{J/s} \quad \text{or} \quad \mathrm{W}
+\end{equation}
+
+\section*{另一种表示方法}
+
+化工原理常用 $h_\mathrm{f}$（单位质量能量损失）
+
+\begin{equation}
+gz_1 + \frac{u_1^2}{2} + \frac{p_1}{\rho} + W_\mathrm{e} = gz_2 + \frac{u_2^2}{2} + \frac{p_2}{\rho} + h_\mathrm{f}
+\end{equation}
+
+符号说明（单位质量，J/kg）
+
+\vspace{6pt}
+gz：位能
+
+\vspace{6pt}
+\(\dfrac{u^2}{2}\)：动能
+
+\vspace{6pt}
+\(\dfrac{p}{\rho}\)：静压能
+
+\vspace{6pt}
+$W_\mathrm{e}$：外加功（泵对流体做功）
+
+\vspace{6pt}
+$h_\mathrm{f}$：流动阻力损失
+
+\section{应用伯努利方程解题要点}
+
+\bluebold{确定衡算范围}：做出流动示意图，标明流体流动方向，选定上、下游截面，明确衡算范围
+
+\bluebold{衡算截面}：截面与流动方向垂直，截面间流体连续，待求的未知量应在截面间或截面上。
+
+\bluebold{基准面}：任意水平面，一般选位置较低的截面中心线所在的水平面
+
+
+\bluebold{压强}：表示方法一致，绝对压强或表压强，表压强更方便
+
+\bluebold{单位一致}：采用国际单位
+
+\end{document}

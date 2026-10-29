@@ -1,0 +1,124 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+流体在管内的流体阻力
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c} 
+\toprule
+知识点 & point\\ [0.5ex] 
+\midrule
+1 & 直管阻力损失 \\
+2 & 局部阻力损失 \\
+3 & 总阻力损失的计算 \\
+\bottomrule
+\end{tabular}
+\caption{Table of Knowledge Points on Fluid Resistance Inside Pipelines.}
+\label{table:data}
+\end{table}
+
+\chapter{直管阻力损失}
+
+实际流体具有粘性，这是导致流体流动产生阻力损失的\bluebold{根本原因}。
+
+\begin{equation}
+h_\mathrm{f} = \lambda \frac{l}{d} \frac{u^2}{2}
+\label{eq:fanning}
+\end{equation}
+
+Fanning 公式或阻力计算通式，适用层流、湍流。
+
+$\lambda$：摩擦系数（因数），量纲为1，没有单位；
+
+
+层流流动
+\begin{equation}
+\lambda = \frac{64}{\mathrm{Re}}
+\label{eq:lambda-laminar}
+\end{equation}
+
+湍流流动
+\begin{equation}
+\lambda = f\left(\frac{\varepsilon}{d},\; \mathrm{Re}\right)
+\label{eq:lambda-turbulent}
+\end{equation}
+
+$\varepsilon$：管壁绝对粗糙度，m;
+
+$\frac{\varepsilon}{d}$：相对粗糙度
+
+湍流区：$\lambda = f\left(\frac{\varepsilon}{d},\; \mathrm{Re}\right),\; \mathrm{Re} up, \lambda down$
+
+阻力平方区：$\lambda = f(\frac{\varepsilon}{d})$
+
+$\lambda$计算：查图或公式计算，图或公式一般会给
+
+\chapter{局部阻力损失}
+
+实际露天具有粘性，这是导致流体流体产生阻力损失的根本原因。
+
+流体流经弯头、阀门、突然扩大/缩小等管件时，流速大小或流动方向发生改变，形成漩涡，造成机械能损失，即为局部阻力损失。
+
+弯头、阀门、进口、出口等局部产生的
+
+\begin{equation}
+h_\mathrm{f'} = \zeta \frac{u^2}{2}
+\end{equation}
+
+$\zeta$ 为局部阻力系数，与管件结构形式有关。
+
+\begin{equation}
+h_\mathrm{f'} = \lambda \frac{\sigma l_e}{d} \frac{u^2}{2}
+\label{eq:local-resistance}
+\end{equation}
+
+\chapter{总阻力损失的计算}
+
+总阻力为直管阻力与局部阻力叠加：
+
+\begin{equation}
+h_{\mathrm{f},\mathrm{total}} = \sum \lambda\frac{l}{d}\frac{u^2}{2} + \sum \zeta\frac{u^2}{2}
+\label{eq:total-resistance}
+\end{equation}
+或写为
+\begin{equation}
+h_{\mathrm{f}} = h_{\mathrm{f}} + h^\mathbf{'}_{\mathrm{f}} = \left(\lambda\frac{l + \sum l_\mathrm{e}{d}}{d} + \sum \zeta \right) \cdot \frac{u^2}{2}
+\end{equation}
+
+对直管阻力，如果管段内的流速不同，需分段计算。
+
+对同一管件，阻力系数或当量长度二选一
+
+\bluebold{减少阻力损失的方法}
+
+管理尽可能短，尽量走直线，少走弯路
+
+尽量不安装不必要的管件和阀门
+
+采用大直径管
+
+\end{document}

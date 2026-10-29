@@ -1,0 +1,182 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+
+流体流动现象知识点
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c} 
+\toprule
+知识点 & point\\ [0.5ex] 
+\midrule
+ 1 & 流量与流速 \\ 
+ 2 & 稳态流动与非稳态流动 \\
+ 3 & 牛顿黏性定律与流体黏性 \\
+ 4 & 流体类型与雷诺数 \\
+ 5 & 流体在圆管内的速度分布 \\ [1ex] 
+ 5 & 流动边界层的概念 \\ [1ex] 
+\bottomrule
+\end{tabular}
+\caption{Knowledge Point Table of Fluid Flow Phenomena.}
+\label{table:data}
+\end{table}
+
+\chapter{流体流动现象}
+
+\section{流量}
+
+在单位时间内流过管道内任一截面流体的量。
+体积流量 $\mathrm{q_v}$，$\mathrm{m^3/s}$ 和质量流量 $\mathrm{q_m}$，$\mathrm{kg/s}$
+
+% $\quad \mathrm{m^3\cdot s^{-1}}$ and $\quad \mathrm{kg\cdot s^{-1}}$
+
+\begin{equation}
+q_m= \rho q_v
+\end{equation}
+
+\section{流速}
+
+\bluebold{流速}：单位时间内流体在流动方向上流过的距离，u，$\mathrm{m/s}$
+
+\begin{equation}
+u = \frac{q_v}{A}
+\end{equation}
+
+\bluebold{圆形管路}
+
+\begin{equation}
+u = \frac{4 q_v}{\pi d^2}
+\end{equation}
+
+\bluebold{质量流速}：单位时间内流体流过单位截面的质量，G，$\mathrm{kg\cdot m^{-2}\cdot s^{-1}}$
+
+\begin{equation}
+G = \mathrm{\rho u}
+\end{equation}
+
+\bluebold{流体计算离不开流速和流量的计算}
+
+\chapter{稳态流动与非稳态流动}
+
+\bluebold{稳态流动}：系统中各截面的u、p、$\rho$ 等物理量仅与位置有关，与时间无关。
+
+\bluebold{非稳态流动}：系统中各截面的u、p、$\rho$ 等物理量与时间和位置有关。
+
+\chapter{牛顿黏性定律与流体黏度}
+
+\section{牛顿黏性定律}
+
+\begin{equation}
+\tau = \frac{F}{A} = \mu \frac{du}{dy}
+\end{equation}
+
+\(\tau = \frac{F}{A} = \mu \frac{du}{dy}\)
+
+\(\tau\)：剪切应力
+
+$\mu$：\(\mu\) 动力黏度
+
+\(\dfrac{du}{dy}\)：速度梯度
+
+详细描述：
+
+\(\boldsymbol{\tau}\):应力张量（矢量/张量形式，后续高阶内容）
+
+\(\tau\)：流体层间剪切应力，内摩擦应力，$\mathrm{N / m^2}$
+
+$\mu$：流体的黏性系数或黏度，$\mu,\ \mathrm{Pa\cdot s}$，在流体里代表\bluebold{动力黏度}。
+
+\(\dfrac{du}{dy}\)：法向速度梯度。
+
+\section{流体黏度}
+
+\begin{equation}
+\mu = \frac{T}{\frac{du}{dy}}
+\end{equation}
+
+$\mu$：促使流体产生单位速度梯度的剪应力（内摩擦应力），速度梯度up，内摩擦应力up，
+黏度总是和速度梯度相关联
+
+黏度是流体的物理性质，$\mu = f(\tau, p)$
+
+$\tau$ up, 液体 $\mu$ down, 气体 $\mu$ up
+
+压力影响可以忽略
+
+\chapter{流动类型和雷诺数}
+
+\section{流动类型}
+
+\bluebold{层流（滞流）}：质点沿轴线方向做规则直线运动，层间质点不混合、不碰撞
+
+\bluebold{湍流（紊流）}：质点轴向运动 + 径向不规则脉动，质点碰撞、混合，大量漩涡，
+质点速度大小和方向随时变化
+
+\section{雷诺数}
+
+\begin{equation}
+\mathrm{Re} = \frac{d u \rho}{\mu}
+\end{equation}
+
+$Re \leq 2000$：滞流 或 湍流
+
+$2000 < Re < 4000$：过渡区，不稳定;
+
+工业上 $Re > 3000$：都按照湍流考虑
+
+$Re \geq 4000$：湍流 或 紊流
+
+
+\chapter{流体在圆管中的速度分布}
+
+\section{层流流动的速度分布}
+
+同一截面上各点速度不同，抛物线分布
+
+管中心速度最大，管壁处为 0
+
+\begin{equation}
+u = \frac{u_\text{max}}{2}
+\end{equation}
+
+\section{湍流流动的速度分布}
+
+速度分布比层流均匀，管壁处速度梯度较大
+
+\chapter{流动边界层的概念}
+
+\bluebold{边界层}：管壁附近存在\bluebold{较大速度梯度}的流体层
+
+\bluebold{流体主流区}：边界层外的流体，速度梯度可以忽略，黏性不起作用，可以看成\bluebold{理想流体}
+
+\bluebold{边界层区}：边界层内，速度梯度很大，流动阻力集中在边界层区
+
+湍流边界层也存在\bluebold{层流底层}（层流内层）
+
+\section*{tips}
+
+\bluebold{边界层很少单独出题考试，但是流动阻力、传热、传质理论分析的基础}
+
+\end{document}

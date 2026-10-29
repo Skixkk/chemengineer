@@ -1,0 +1,159 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+
+\chapter{Fluid statics 流体静力学}
+
+\section{Properties of fluids 流体性质}
+
+Continuity of fluids 流体连续性
+
+流体是由无数彼此相连、彼此无间隙的\bluebold{质点}组成，是一种\bluebold{连续性}介质
+
+\bluebold{质点}：大量分子或原子组成的流体微团
+虚拟的，保持流体宏观特性的最小流体微元
+
+\bluebold{尺寸}：远小于管道、设备尺寸，远大于分子自由程
+
+\section{Compressibility 可压缩性}
+
+体积压缩系数
+
+\begin{equation}
+\beta = \frac{1}{\rho} \left( \frac{\partial \rho}{\partial p} \right)_T
+\label{eq:isothermal-compressibility}
+\end{equation}
+
+\begin{itemize}
+    \item 下标 T 代表等温条件，是压缩系数必不可少的标识；
+\end{itemize}
+
+or
+
+\begin{equation}
+\beta = \frac{1}{\rho} \frac{d\rho}{dp}
+\end{equation}
+
+beta 越大, 流体越容易被压缩
+
+\subsection{体积压缩系数}
+
+下标 T 代表等温条件，是压缩系数必不可少的标识；
+
+\section{无定形性}
+
+没有固定的形状，形状随容器而变
+
+\section*{notes}
+
+体积压缩系数
+
+\chapter{密度和压强}
+
+\section{密度 \texorpdfstring{$\rho$}{密度 ρ}}
+
+单位体积流体所具有的质量，$\mathrm{kg/m^3}$ or$\quad \mathrm{kg\cdot m^{-3}}$
+
+\begin{equation}
+\rho = \frac{m}{V} = f(T,p)
+\label{eq:density-def}
+\end{equation}
+
+由公式 \ref{eq:density-def} 可知密度与温压相关。
+
+可压缩流体，$\rho = f(T,p)$
+
+不可压缩流体，$\rho \neq f(p)$, $\rho = f(T)$
+
+\section{压强}
+
+垂直作用在单位流体表面积上的法向力 $p = \frac{dF}{dA}$, 
+
+标准大气压：
+
+$\mathrm{1\,atm} = \mathrm{101325\,Pa} = \mathrm{760\,mmHg} = \mathrm{10.33\,mH_2O}$
+
+\bluebold{绝对压强}：真实压强，以绝对真空为基准
+
+\bluebold{表压强和真空度}：当地大气压为基准
+
+\begin{equation}
+p_\text{表} = p_\text{绝} - p_\alpha
+\end{equation}
+
+\begin{equation}
+p_\text{真} = p_\alpha - p_\text{绝}
+\end{equation}
+
+表压强和真空度互为相反数
+
+\chapter{流体静力学基本方程式}
+
+\section{流体静力学基本方程式}
+
+\begin{equation}
+\mathrm{p_1} + \mathrm{\rho g z_1} = \mathrm{p_2} + \mathrm{\rho g z_2}
+\end{equation}
+
+\begin{equation}
+\frac{p_1}{\rho} + \mathrm{g z_1} = \frac{p_2}{\rho} + \mathrm{g z_2}
+\end{equation}
+
+\begin{equation}
+\mathrm{\rho_2} = \mathrm{\rho_1} + \mathrm{\rho gh}
+\end{equation}
+
+等压面：静止的、连续的、不可压缩的、同一种流体内部，处于同一水平面上各点的压强相等。
+
+\section{静力学基本方程式的应用}
+
+U形管压差计，指示剂A与被测液体B不互溶，$\mathrm{\rho_A} > \mathrm{\rho_B}$
+
+静力学应用，关键是寻找等压面
+
+\begin{equation}
+p_\text{a} = p'_\text{a}
+\end{equation}
+
+\begin{equation}
+p_\text{a} = p_1 + \rho_\mathrm{B} g (m + R)
+\end{equation}
+
+\begin{equation}
+p'_\text{a} = p_2 + \rho_\mathrm{B} g m + \rho_\mathrm{A} g R
+\end{equation}
+
+第一个等式，是第二、三个相等的联系平衡式
+
+\begin{equation}
+p_1 + \rho_\mathrm{B} g (m + R) = p_2 + \rho_\mathrm{B} g m + \rho_A g R
+\end{equation}
+
+最终得到
+
+\begin{equation}
+p_1 - p_2 = (\rho_\mathrm{A} - \rho_\mathrm{B}) g R
+\end{equation}
+
+\end{document}

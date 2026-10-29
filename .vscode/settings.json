@@ -1,0 +1,66 @@
+{
+  // "latex-workshop.latexindent.path": "tex-fmt",
+  // 格式化工具指定为 tex-fmt
+  "latex-workshop.formatting.latex": "tex-fmt",
+  // latex 文件保存时自动格式化
+  "[latex]": {
+    "editor.formatOnSave": true
+  },
+  // 保存文件时自动触发编译
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  // 默认编译方案为 latexmk
+  "latex-workshop.latex.recipe.default": "latexmk",
+  // 编译方案列表
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    }
+  ],
+  // 编译工具配置
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      // 使用 xelatex 编译器，适配 ctex 中文文档；输出目录；目标文件
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    }
+  ],
+  // PDF 使用 VSCode 内置标签页预览
+  "latex-workshop.view.pdf.viewer": "tab",
+  // 正向同步：双击PDF跳转至源码
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  // 编译完成后自动开启同步
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  // PDF滚动模式，0=连续滚动
+  "latex-workshop.view.pdf.scrollMode": 0,
+  // PDF默认缩放适配页面宽度
+  "latex-workshop.view.pdf.zoom": "page-width",
+  // 显示错误提示
+  "latex-workshop.message.error.show": true,
+  // 显示警告提示
+  "latex-workshop.message.warning.show": true,
+  // 编译后清理的辅助文件类型
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.log",
+    "*.toc",
+    "*.out",
+    "*.synctex.gz",
+    "*.fls",
+    "*.fdb_latexmk"
+  ],
+  // 禁止info弹窗，只在底部状态栏提示
+  "latex-workshop.message.info.show": false,
+  // 编译失败时不自动聚焦滚动日志面板
+  "latex-workshop.log.panel.focusOnBuild": false,
+  // 开启synctexjs，支持PDF点击反向同步跳回tex源码
+  "latex-workshop.synctex.synctexjs.enabled": true,
+  "latex-workshop.view.pdf.internal.reloadOnBuild": true
+}
