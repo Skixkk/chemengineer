@@ -1,0 +1,99 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+管路计算
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c} 
+\toprule
+知识点 & point & 常见题型\\ [0.5ex] 
+\midrule
+1 & 简单管路 & 填空~选择~计算\\
+2 & 复杂管路 & 填空~选择\\
+\bottomrule
+\end{tabular}
+\caption{Knowledge points table for pipeline calculation.}
+\label{table:pipeline-knowledge}
+\end{table}
+
+\chapter{简单管路}
+
+单根管子，或由不同材质、不同管径的管子连接而成的串联管路。
+
+各段管路内流体的\bluebold{流量相同}。
+\begin{equation}
+q_\mathrm{v} = q_\mathrm{v1} = q_\mathrm{v2}
+\label{eq:simple-pipe-flow}
+\end{equation}
+
+管路的\bluebold{总阻力损失=各段管路阻力损失之和}
+\begin{equation}
+h_\mathrm{f,\text{总}} = h_\mathrm{f,1} + h_\mathrm{f,2}
+\label{eq:simple-pipe-hf}
+\end{equation}
+
+\bluebold{前面所讲的有关管路的内容，都属于简单管路}
+
+\chapter{复杂管路}
+
+\section{并联管路}
+
+有分支也有汇合：流体在主管分叉、支管之后重新汇合。
+
+主管中的流量\bluebold{等于}并联的各支管流量之和，对于不可压缩流体，则有
+\begin{equation}
+q_\mathrm{v} = q_\mathrm{v1} + q_\mathrm{v2}
+\label{eq:parallel-pipe-flow}
+\end{equation}
+
+并联管路中，单位质量流体通过任何一根支管的\bluebold{摩擦损失相等}，并基于此进行流量分配。
+\begin{equation}
+h_\mathrm{f,1} = h_\mathrm{f,2} = h_\mathrm{f,AB}
+\label{eq:parallel-pipe-hf}
+\end{equation}
+
+\section{分支管路}
+
+有分支，不汇合：流体自主管分出支管，支管不再汇合。
+
+主管中的流量等于各支管流量之和，对于不可压缩流体，则有
+\begin{equation}
+q_\mathrm{v} = q_\mathrm{vA} + q_\mathrm{vB}
+\label{eq:branch-pipe-flow}
+\end{equation}
+
+单位质量流体在各支管流动终了时的总机械能与能量损失之和相等
+\begin{equation}
+\begin{aligned}
+gz_\mathrm{C} + \frac{u^2_\mathrm{C}}{2} + \frac{p_\mathrm{C}}{\rho}
+&= gz_\mathrm{A} + \frac{u^2_\mathrm{A}}{2} + \frac{p_\mathrm{A}}{\rho} + h_\mathrm{f,CA} \\
+&= gz_\mathrm{B} + \frac{u^2_\mathrm{B}}{2} + \frac{p_\mathrm{B}}{\rho} + h_\mathrm{f,CB}
+\end{aligned}
+\label{eq:branch-pipe-mech}
+\end{equation}
+
+\end{document}
