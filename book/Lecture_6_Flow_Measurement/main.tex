@@ -1,0 +1,44 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+流量测量
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c} 
+\toprule
+知识点 & point & 常见题型\\ [0.5ex] 
+\midrule
+1 & 测速管 & 填空~选择\\
+2 & 孔板流量计 & 填空~选择\\
+2 & 转子流量计 & 填空~选择\\
+\bottomrule
+\end{tabular}
+\caption{Knowledge Point Table for Flow Measurement.}
+\label{table:pipeline-knowledge}
+\end{table}
+
+\end{document}
