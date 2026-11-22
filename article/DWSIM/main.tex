@@ -1,0 +1,62 @@
+\documentclass{book}
+\usepackage{ctex}
+\usepackage[cmex10]{amsmath}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\DeclareRobustCommand{\bluebold}[1]{\textbf{\textcolor[rgb]{0.31,0.63,0.86}{#1}}}
+
+\usepackage[
+    pdfpagemode=UseOutlines,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+]{hyperref}
+\usepackage{bookmark}
+
+\raggedbottom
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+DWSIM
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c} 
+\toprule
+序号 & point & 方向\\ [0.5ex] 
+\midrule
+1 & Chemical Process Simulator & 通过拖放组件建图（Flowsheet）\\
+\end{tabular}
+\caption{Knowledge Point Table for Flow Measurement.}
+\label{table:pipeline-knowledge}
+\end{table}
+
+\chapter{DWSIM}
+
+DWSIM 是一款开源、免费的化工流程模拟软件（Chemical Process Simulator），主要用于化学工程、石油化工、能源工程和过程工业中的工艺设计、流程模拟、物料衡算、能量衡算及设备参数优化。
+
+DWSIM 可以在计算机中建立一座虚拟化工厂，把反应器、精馏塔、换热器、泵、压缩机、管道等设备连接起来，通过热力学模型和数学方程，模拟真实化工生产过程。
+它相当于一个化工过程的数字化实验平台，可以在不直接操作真实装置的情况下，研究不同操作条件对生产过程的影响。
+
+DWSIM 的稳态流程模拟不能直接替代现场 DCS、实时动态模型或安全联锁系统。真正的工业应用还需要现场数据校准、模型验证和工程师审核。
+
+\chapter{separator drum of DWSIM}
+
+In DWSIM, a separator drum (also called a Separator Vessel or Gas-Liquid Separator) 
+splits a multi-phase inlet stream into distinct vapor and liquid outlet streams 
+based on vapor-liquid equilibrium (VLE).
+
+\chapter{Reactors}
+
+\section{Plug Flow Reactor}
+
+A plug flow reactor (PFR) is defined as a type of reactor where fluid particles move through a tube without backmixing, each plug of fluid having uniform temperature, composition, and pressure, allowing for high conversion per reactor volume. It operates under conditions that aim to maintain isothermal reactions while facilitating efficient heat exchange between the reacting mixture and a coolant.
+
+\end{document}
